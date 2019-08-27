@@ -4,11 +4,11 @@ title: "Images and Video"
 categories: notes
 ---
 
-# File Formats
+## File Formats
 
 Digital images come in a variety of formats, each with their own properties.
 
-## Vector Graphics
+### Vector Graphics
 
 *Vector* formats define a set of points and instructions on how to draw them. The instructions are run by a program to raster the image in order to view it. 
 
@@ -28,7 +28,7 @@ Cons:
   * Low level of detail.
   * Limited types of effects, because we don't have all the image data available in the format.
 
-## Raster Graphics
+### Raster Graphics
 
 *Raster* formats define pixel values in a rectangular grid of pixels. The bigger the image, the greater the data set, and thus the larger the file size.
 
@@ -46,7 +46,7 @@ Cons:
 
 In order not to end up with huge file sizes, many raster formats are compressed. Some compression methods are lossy, meaning that some of the data is lost when it is compressed, and others are lossless, meaning that all the data is recovered once the data is uncompressed.
 
-## Video
+### Video
 
 Videos are just a series of images that need to be processed and displayed very quickly. 
 
@@ -54,13 +54,13 @@ Video formats are always rasters and are mostly compressed. Some formats are sim
 
 Efficient compression is necessary for video because of the huge amount of data that it carries. While film used to run at 24 frames per second, high definition video now runs standard at 60 frames per second, and sometimes goes as high as 240 fps! Combining these fast frame rates with large resolutions like 4K means that hundreds of millions of pixels need to be processed every second for a video to play smoothly.
 
-## Processing Images
+### Processing Images
 
 When working with image data, we will usually want to work with rasterized uncompressed images. This is because many algorithms require looping efficiently through all pixels in an image, or doing quick look-ups between neighboring pixels. 
 
 The good news is that this usually happens in the image loader or video codec, before an image or video frame gets to us. While we will almost never have to worry about decoding an image or a video frame ourselves, we should still be mindful of what format the data comes in, and make sure that it is suitable for our application.
 
-# Image Attributes
+## Image Attributes
 
 An image data structure usually comprises of a width and height, an array of pixels, and a pixel format.
 
@@ -72,9 +72,9 @@ Some frameworks allow accessing pixels using the column `x` and row `y`, like [`
 
 The following example reads the value of a pixel under the mouse cursor.
 
-{% gist 283262100c7d748a437f255a9a2a1415 sm-01b-ofApp-getCoord.cpp  %}
+{% gist 283262100c7d748a437f255a9a2a1415 ofApp-getCoord.cpp  %}
 
-## Pixel Access
+### Pixel Access
 
 A standard color pixel will have 3 color channels: red, green, and blue (`RGB`). While Processing packs all channels into a single `int`, this is not common practice. The color values are usually packed sequentially in the array; instead of each pixel holding a single value, it will hold 3.
 
@@ -104,7 +104,7 @@ index = (y * width + x) * 3
 
 The following example reads the value of a pixel under the mouse cursor, accessing the pixel array by index.
 
-{% gist 283262100c7d748a437f255a9a2a1415 sm-01c-ofApp-getIndex.cpp  %}
+{% gist 283262100c7d748a437f255a9a2a1415 ofApp-getIndex.cpp  %}
 
 Note the use of [`ofPixels.getNumChannels()`](https://openframeworks.cc//documentation/graphics/ofPixels/#!show_getNumChannels) instead of the literal `3`. This ensures the code will work with all image types and not just RGB images.
 
@@ -117,9 +117,9 @@ y = index / width
 
  The following example reads the value of a pixel sequentially, based on the sketch frame number.
 
-{% gist 283262100c7d748a437f255a9a2a1415 sm-01d-ofApp-getFrame.cpp  %}
+{% gist 283262100c7d748a437f255a9a2a1415 ofApp-getFrame.cpp  %}
 
-## Image Format
+### Image Format
 
 The most common image type we will work with is `RGB` color images. 
 
@@ -129,7 +129,7 @@ Some images also have an alpha channel for transparency, like `RGBA`. Our exampl
 
 Another format worth mentioning is [`YUV`](https://en.wikipedia.org/wiki/YUV), which is a color encoding that is based on the range of human perception. Instead of using three channels for color, it uses one for brightness and two for color shift. This gives similar results to `RGB` but at much smaller sizes (usually a third), and this is why `YUV` formats are often used for webcam streams.
 
-## Pixel Format
+### Pixel Format
 
 Pixel color values can be stored in a few different formats. The more bits a format can hold, the more range the values can have, and the larger the size of the frame gets.
 
@@ -139,7 +139,7 @@ Pixel color values can be stored in a few different formats. The more bits a for
 
 The following example reads the value of a pixel under the mouse cursor, accessing the pixel array directly.
 
-{% gist 283262100c7d748a437f255a9a2a1415 sm-01e-ofApp-getData.cpp  %}
+{% gist 283262100c7d748a437f255a9a2a1415 ofApp-getData.cpp  %}
 
 While accessing data arrays directly is a bit more complicated, it tends to be much faster and is the recommended approach when having to process large images pixel by pixel.
 
