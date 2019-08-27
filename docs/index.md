@@ -48,9 +48,8 @@ The first classes will consist of theory and in-class exercises covering these t
 # Evaluation
 
  * On-time Participation 20%
- * Blogging 20%
- * Assignments 35%
- * Final Project 25%
+ * Assignments 30%
+ * Final Project 50%
 
 # Academic Integrity
 
