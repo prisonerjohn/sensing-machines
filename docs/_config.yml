@@ -21,7 +21,7 @@ description: |-
   Mondays 6:30pm - 9:20pm
   370 Jay Street
   Room 408
-baseurl: "sensing-machines" # the subpath of your site, e.g. /blog
+baseurl: "/sensing-machines" # the subpath of your site, e.g. /blog
 url: "http://prisonerjohn.com" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: prisonerjohn
 github_username:  prisonerjohn

@@ -101,93 +101,30 @@ Even though an image has 2 dimensions, a pixel array is usually one-dimensional,
 
 Some frameworks allow accessing pixels using the column `x` and row `y`, like Processing. The following example reads the value of a pixel under the mouse cursor.
 
-```java
-PImage shapes;
-
-void settings() {
-  size(512, 512);
-}
-
-void setup() 
-{
-  shapes = loadImage("shapes.png");
-}
-
-void draw() 
-{
-  background(shapes);
-  color c = shapes.get(mouseX, mouseY);
-  fill(c);
-  rect(mouseX - 25, mouseY - 25, 50, 50);
-}
-```
+{% gist d139b58390dc3c2ad3de072329c86134 sm-01-getpixel-get.pde  %}
 
 Note, however, that it is usually preferred to access the array directly as that tends to be much faster. In order to access the pixel in a 1D array using a 2D index, we first need to convert it.
 
 This is done using the operation:
 
- `index = y * width + x`.
+ ```java
+ index = y * width + x
+ ```
 
  The following example reads the value of a pixel under the mouse cursor, accessing the pixel array directly.
 
-{% gist 389f27c0fc7fb8936a428297daf4b3b1 %}
-
-```java
-PImage shapes;
-
-void settings() {
-  size(512, 512);
-}
-
-void setup() 
-{
-  shapes = loadImage("shapes.png");
-  shapes.loadPixels();
-}
-
-void draw() 
-{
-  background(shapes);
-  color c = shapes.pixels[mouseY * shapes.height + mouseX];
-  fill(c);
-  rect(mouseX - 25, mouseY - 25, 50, 50);
-}
-```
+{% gist d139b58390dc3c2ad3de072329c86134 sm-01-getpixel-pixels.pde  %}
 
 Conversely, if we want to get a 2D value from a 1D index, we need to use integer division:
 
-```
+```java
 x = index % width
 y = index / width
 ```
 
  The following example reads the value of a pixel sequentially, based on the sketch frame number.
 
-```java
-PImage shapes;
-
-void settings() {
-  size(512, 512);
-}
-
-void setup() 
-{
-  shapes = loadImage("shapes.png");
-  shapes.loadPixels();
-}
-
-void draw() 
-{
-  int index = frameCount * 24;
-  int x = index % shapes.width;
-  int y = index / shapes.width;
-    
-  background(shapes);
-  color c = shapes.pixels[index];
-  fill(c);
-  rect(x - 25, y - 25, 50, 50);
-}
-```
+{% gist d139b58390dc3c2ad3de072329c86134 sm-01-getpixel-seq.pde  %}
 
 ## Pixel Format
 
@@ -197,7 +134,9 @@ A standard color pixel will have 3 color channels: red, green, and blue (RGB). T
 
 Processing packs all channels into a single `int`, but this is not the case for p5.js or openFrameworks. In most cases, the pixel array has total size:
 
-`size = width * height * channels`
+```java
+size = width * height * channels
+```
 
 Add example
 
