@@ -16,7 +16,7 @@ Some of the more common vector formats are `SVG`, `EPS`, `PDF`, and `AI`.
 
 If we open the following `SVG` file in a text editor, we will notice that it is fairly easy to read the format. It almost reads like a Processing program :)
 
-![](/assets/images/shapes.svg){:height="360px" width="360px"}
+![](assets/images/shapes.svg){:height="360px" width="360px"}
 
 ```xml
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
@@ -63,7 +63,7 @@ Cons:
 
 Some of the more common vector formats are `JPG`, `PNG`, `GIF`, and `TIF`.
 
-![](/assets/images/shapes.png){:height="360px" width="360px"}
+![](assets/images/shapes.png){:height="360px" width="360px"}
 
 Pros:
   * High quality and detail, especially at high resolutions.
