@@ -32,7 +32,7 @@ The first classes will consist of theory and in-class exercises covering these t
 
 | Date                 | Topic          | Assignment |
 |:---------------------|:------------------|:------|:------|
-| Sep 9                | [Foreword]({% post_url 2019-09-09-foreword %})<br/>[Images and Video]({% post_url 2019-09-09-images-and-video %}) | N/A |
+| Sep 9                | [Foreword]({{ site.baseurl }}{% post_url 2019-09-09-foreword %})<br/>[Images and Video]({{ site.baseurl }}{% post_url 2019-09-09-images-and-video %}) | N/A |
 | Sep 16               | Computer Vision | |
 | Sep 23               | Image Filtering | |
 | Sep 30               | Depth Sensing | |

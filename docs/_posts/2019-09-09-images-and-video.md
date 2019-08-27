@@ -16,38 +16,9 @@ Some of the more common vector formats are `SVG`, `EPS`, `PDF`, and `AI`.
 
 If we open the following `SVG` file in a text editor, we will notice that it is fairly easy to read the format. It almost reads like a Processing program :)
 
-![](assets/images/shapes.svg){:height="360px" width="360px"}
+![]({{ site.baseurl }}/assets/images/shapes.svg){:height="360px" width="360px"}
 
-```xml
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<svg
-   ...
-   height="512"
-   width="512">
-  ...
-  <g
-     transform="translate(0,-161.53332)"
-     id="layer1">
-    <circle
-       style="stroke-width:0.26458332;fill:#00ffff;fill-opacity:1"
-       r="52.916664"
-       cy="229.26665"
-       cx="67.73333"
-       id="path3713" />
-    <rect
-       y="228.20831"
-       x="5.2916665"
-       height="63.5"
-       width="63.5"
-       id="rect4520"
-       style="fill:#ff0000;fill-opacity:1;stroke-width:0.25843021" />
-    <path
-       id="path4524"
-       d="M 49.514879,171.88985 123.5982,282.2589 Z"
-       style="fill:none;stroke:#00b400;stroke-width:2.64583325;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
-  </g>
-</svg>
-```
+{% gist 584d166a85fdf268273d78e6979d29f0 %}
 
 Pros:
   * Small file sizes, because minimal information is being stored.
@@ -63,7 +34,7 @@ Cons:
 
 Some of the more common vector formats are `JPG`, `PNG`, `GIF`, and `TIF`.
 
-![](assets/images/shapes.png){:height="360px" width="360px"}
+![]({{ site.baseurl }}/assets/images/shapes.png){:height="360px" width="360px"}
 
 Pros:
   * High quality and detail, especially at high resolutions.
@@ -89,65 +60,86 @@ When working with image data, we will usually want to work with rasterized uncom
 
 The good news is that this usually happens in the image loader or video codec, before an image or video frame gets to us. While we will almost never have to worry about decoding an image or a video frame ourselves, we should still be mindful of what format the data comes in, and make sure that it is suitable for our application.
 
-# Image Formats
+# Image Attributes
 
 An image data structure usually comprises of a width and height, an array of pixels, and a pixel format.
 
 Even though an image has 2 dimensions, a pixel array is usually one-dimensional, packing the rows one after the other.
 
-![](/assets/images/grid-pix.png){:width="360px"}
+![]({{ site.baseurl }}/assets/images/grid-pix.png){:width="360px"}
 
-## Pixel Index
+Some frameworks allow accessing pixels using the column `x` and row `y`, like [`PImage.get()`](https://www.processing.org/reference/PImage_get_.html) in Processing and [`ofImage.getColor()`](https://openframeworks.cc//documentation/graphics/ofImage/#!show_getColor) in openFrameworks. 
 
-Some frameworks allow accessing pixels using the column `x` and row `y`, like Processing. The following example reads the value of a pixel under the mouse cursor.
+The following example reads the value of a pixel under the mouse cursor.
 
-{% gist d139b58390dc3c2ad3de072329c86134 sm-01-getpixel-get.pde  %}
+{% gist 283262100c7d748a437f255a9a2a1415 sm-01b-ofApp-getCoord.cpp  %}
 
-Note, however, that it is usually preferred to access the array directly as that tends to be much faster. In order to access the pixel in a 1D array using a 2D index, we first need to convert it.
+## Pixel Access
 
-This is done using the operation:
+A standard color pixel will have 3 color channels: red, green, and blue (`RGB`). While Processing packs all channels into a single `int`, this is not common practice. The color values are usually packed sequentially in the array; instead of each pixel holding a single value, it will hold 3.
 
- ```java
+![]({{ site.baseurl }}/assets/images/grid-rgb.png){:width="360px"}
+
+The pixel array then has total size:
+
+```cpp
+size = width * height * channels
+```
+
+In order to access the pixel in a 1D array using a 2D index, we first need to convert it.
+
+ ```cpp
  index = y * width + x
  ```
 
- The following example reads the value of a pixel under the mouse cursor, accessing the pixel array directly.
+How do we access a pixel index in an `RGB` image?
 
-{% gist d139b58390dc3c2ad3de072329c86134 sm-01-getpixel-pixels.pde  %}
+Because each pixel has three color values (for each `RGB` channel), we need to multiply our pixel index by `3` to take that offset into account.
 
-Conversely, if we want to get a 2D value from a 1D index, we need to use integer division:
+```cpp
+pixel = y * width + x
+index = pixel * 3
+index = (y * width + x) * 3
+```
 
-```java
+The following example reads the value of a pixel under the mouse cursor, accessing the pixel array by index.
+
+{% gist 283262100c7d748a437f255a9a2a1415 sm-01c-ofApp-getIndex.cpp  %}
+
+Note the use of [`ofPixels.getNumChannels()`](https://openframeworks.cc//documentation/graphics/ofPixels/#!show_getNumChannels) instead of the literal `3`. This ensures the code will work with all image types and not just RGB images.
+
+Conversely, if we want to get a 2D value from a 1D index, we can use integer division:
+
+```cpp
 x = index % width
 y = index / width
 ```
 
  The following example reads the value of a pixel sequentially, based on the sketch frame number.
 
-{% gist d139b58390dc3c2ad3de072329c86134 sm-01-getpixel-seq.pde  %}
+{% gist 283262100c7d748a437f255a9a2a1415 sm-01d-ofApp-getFrame.cpp  %}
+
+## Image Format
+
+The most common image type we will work with is `RGB` color images. 
+
+We will also work with single-channel formats, usually called grayscale or luminance. These are particularly handy for devices that only capture a brightness level, like infrared cameras or depth sensors.
+
+Some images also have an alpha channel for transparency, like `RGBA`. Our example image happens to have transparency, but we will encounter this rarely in this class as most sensors do not use the alpha channel.
+
+Another format worth mentioning is [`YUV`](https://en.wikipedia.org/wiki/YUV), which is a color encoding that is based on the range of human perception. Instead of using three channels for color, it uses one for brightness and two for color shift. This gives similar results to `RGB` but at much smaller sizes (usually a third), and this is why `YUV` formats are often used for webcam streams.
 
 ## Pixel Format
 
-A standard color pixel will have 3 color channels: red, green, and blue (RGB). These will be packed sequentially in the array. Instead of each pixel holding a single value, it will hold 3.
+Pixel color values can be stored in a few different formats. The more bits a format can hold, the more range the values can have, and the larger the size of the frame gets.
 
-![](/assets/images/grid-rgb.png){:width="360px"}
+* `unsigned char` is the most common format. It uses integers and each channel has 8 bits of data and values range from `0` to `255`.
+* `float` uses floating point 32-bit data. The usual range is from `0.0` to `1.0` but this format can be used for [HDR](https://en.wikipedia.org/wiki/High-dynamic-range_imaging) effects, where the values can extend past `1.0` or for storing non-color data, where we can even use negative values. We will use `float` a lot when working with depth sensors.
+* `unsigned short` is another integer format but with 16-bits of data, meaning values range from `0` to `65535`. We will use this format a lot too when working with depth sensors, where precision is very important.
 
-Processing packs all channels into a single `int`, but this is not the case for p5.js or openFrameworks. In most cases, the pixel array has total size:
+The following example reads the value of a pixel under the mouse cursor, accessing the pixel array directly.
 
-```java
-size = width * height * channels
-```
+{% gist 283262100c7d748a437f255a9a2a1415 sm-01e-ofApp-getData.cpp  %}
 
-Add example
-
-RGB
-Grayscale
-Some have alpha but not for us
-YUY
-
-char 0-255
-float 0-1
-short 0-65535
-
-Conway game of life
+While accessing data arrays directly is a bit more complicated, it tends to be much faster and is the recommended approach when having to process large images pixel by pixel.
 
