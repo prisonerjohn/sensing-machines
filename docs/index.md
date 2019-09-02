@@ -16,9 +16,11 @@ Telegram Channel: [https://t.me/joinchat/AAAAAFIipxpgf9iMHZEbaQ](https://t.me/jo
 
 # Overview
 
-A programming course where we'll explore various techniques and solutions for tracking and sensing people or objects in space. Students will get familiar with the terminology and algorithms behind many sensing topics such as computer vision, depth cameras, positional tracking, coordinate mapping, machine learning, and pattern recognition.  As these subjects are explored, we will also dig into communication, and how this information can be transmitted from one tool to another, for example using OSC, Spout/Syphon, MIDI, DMX/ArtNet. The goal being to use the right tool for the job and not limit ourselves toa particular piece of software.
+A programming course where we'll explore various techniques and solutions for tracking and sensing people or objects in space. Students will get familiar with the terminology and algorithms behind many sensing topics such as computer vision, depth cameras, positional tracking, coordinate mapping, machine learning, and pattern recognition.  As these subjects are explored, we will also dig into communication, and how this information can be transmitted from one tool to another. The goal being to use the right tool for the job and not limit ourselves toa particular piece of software.
 
 The first classes will consist of theory and in-class exercises covering these techniques, and remaining classes will be dedicated to a special project, which should use a combination of what we've learned to create a new work. Students will work in small groups to build this special project, but we'll review proposals, milestones, and work in progress collectively on every class, encouraging discussion and collaboration.
+
+This is the first time this class is taught and I want to use this experience to help shape it as the semester moves along. If there is any topic you would like to cover, please let me know!
 
 # Objectives
 
@@ -28,28 +30,49 @@ The first classes will consist of theory and in-class exercises covering these t
 * Learn to use communication protocols to share data between different tools.
 * Make cool projects.
 
+# Evaluation
+
+You should be an active participant in the class.
+* Show up on time and pay attention.
+* Participate in discussions and ask questions.
+
+There will be 4 assignments for the first part of the semester.
+* Assignments should be completed individually.
+* The objective of these is to make sure you understand what is covered in the class and get your hands dirty.
+* If you are familiar with the techniques explored, get out of your comfort zone!
+* Assignments will have an open-ended component and creativity is encouraged.
+
+The second part of the semester will be dedicated to a larger project.
+* Projects should be created by small teams of 2 or 3 students.
+* The objective is to build a fully fleshed out interactive, which can take the shape of an artwork, a performance, an installation, etc. 
+* Be prepared to show progress every week, starting with a proposal, progress milestones every week, and a final presentation of a working project on the last class.
+
+The evaluation breakdown is as follows:
+
+| On-time Participation | 20% |
+| Assignments | 30% |
+| Final Project | 50% |
+
+Pass/Fail means that anything below 80% is a fail. 
+
+I will notify you ahead of time if you are at risk of failing, and you can reach out to me at any time if you are concerned about your standing in the class.
+
 # Schedule
 
 | Date                 | Topic          | Assignment |
 |:---------------------|:------------------|:------|:------|
-| Sep 9                | Foreword<br/>Images and Video<br/>Intro to openFrameworks | N/A |
-| Sep 16               | Computer Vision | |
+| Sep 9                | Foreword<br/>Images and Video<br/>Intro to openFrameworks | Assignment 1 OUT |
+| Sep 16               | Computer Vision<br/>OpenCV | Assignment 1 DUE<br/>Assignment 2 OUT |
 | Sep 23               | Image Filtering | |
-| Sep 30               | Depth Sensing | |
+| Sep 30               | Depth Sensing | Assignment 2 DUE<br/>Assignment 3 OUT |
 | Oct 7                | Audio and Sound | |
-| Oct 15 (**Tuesday**) | Communication | |
+| Oct 15 (**Tuesday**) | Communication | Assignment 3 DUE<br/>Assignment 4 OUT |
 | Oct 21               | Positional Tracking | |
-| Oct 28               | Topic TBD | |
-| Nov 4                | Project Proposals | |
-| Nov 11               | Topic TBD<br/>Project Milestones | |
-| Nov 18               | Topic TBD<br/>Project Milestones | |
-| Nov 25               | Final Presentations | |
-
-# Evaluation
-
- * On-time Participation 20%
- * Assignments 30%
- * Final Project 50%
+| Oct 28               | Topic TBD | Assignment 4 DUE |
+| Nov 4                | Project Proposals | Project Proposal DUE |
+| Nov 11               | Topic TBD<br/>Milestone Check-In | |
+| Nov 18               | Topic TBD<br/>Milestone Check-In | |
+| Nov 25               | Final Presentations | Final Project DUE |
 
 # Academic Integrity
 
