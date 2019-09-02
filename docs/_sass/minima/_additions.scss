@@ -1,9 +1,28 @@
+details
+{
+  background-color: #eef;
+  padding-left: $spacing-unit / 4;
+  padding-right: $spacing-unit / 4;
+  padding-top: $spacing-unit / 4;
+  padding-bottom: $spacing-unit / 6;
+  margin-bottom: $spacing-unit / 2;
+}
+
+details[open] summary ~ * {
+  animation: sweep .5s ease-in-out;
+}
+
+@keyframes sweep {
+  0%    {opacity: 0;}
+  100%  {opacity: 1;}
+}
+
 summary
 {
   margin: 0;
   padding: 0;
   
-  margin-bottom: $spacing-unit / 2;
+  margin-bottom: $spacing-unit / 6;
   
   font-weight: $base-font-weight;
 
@@ -21,4 +40,22 @@ img
   display: block;
   margin-left: auto;
   margin-right: auto;
+}
+
+video
+{
+  border: 1px solid black;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.caption
+{
+  text-align: center;
+}
+
+td
+{
+  vertical-align: top;
 }
