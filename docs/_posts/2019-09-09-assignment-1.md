@@ -65,4 +65,4 @@ for (each cell in image):
         - src/
 ```
 
-* TBD in class on how to actually submit your ZIP file.
+* Email your package ZIP to [ez377@nyu.edy](mailto:ez377@nyu.edu).
