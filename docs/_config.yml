@@ -31,6 +31,15 @@ markdown: kramdown
 theme: minima
 plugins:
   - jekyll-feed
+kramdown:
+  syntax_highlighter: rouge
+  syntax_highlighter_opts:
+    default_lang: cpp
+    css_class: 'highlight'
+#    span:
+#      line_numbers: false
+#    block:
+#      line_numbers: true
 
 future: true
 

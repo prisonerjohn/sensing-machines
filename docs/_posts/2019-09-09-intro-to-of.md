@@ -110,6 +110,16 @@ void ofApp::draw()
 }
 ```
 
+<details>
+	<summary>What does the <code>::</code> mean?</summary>
+	<p markdown="1">
+	`::` is a scope resolution operator in C++. It is used to show the relationship between methods (functions) and classes. Methods can be defined anywhere in the source code, so we need a way to know where they belong when they are defined.
+	</p>
+	<p markdown="1">
+	For example, `void ofApp::draw()` means "define the `draw()` function that belongs to the `ofApp` class".
+	</p>
+</details>
+
 ## Getting Started
 
 ### Installation
