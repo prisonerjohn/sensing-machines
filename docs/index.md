@@ -61,7 +61,7 @@ I will notify you ahead of time if you are at risk of failing, and you can reach
 
 | Date                 | Topic          | Assignment |
 |:---------------------|:------------------|:------|:------|
-| Sep 9                | Foreword<br/>Images and Video<br/>Intro to openFrameworks | Assignment 1 OUT |
+| Sep 9                | [Foreword]({{ site.baseurl }}{% post_url 2019-09-09-foreword %})<br/>[Images and Video]({{ site.baseurl }}{% post_url 2019-09-09-images-and-video %})<br/>[Intro to openFrameworks]({{ site.baseurl }}{% post_url 2019-09-09-intro-to-of %}) | Assignment 1 OUT |
 | Sep 16               | Computer Vision<br/>OpenCV | Assignment 1 DUE<br/>Assignment 2 OUT |
 | Sep 23               | Image Filtering | |
 | Sep 30               | Depth Sensing | Assignment 2 DUE<br/>Assignment 3 OUT |
