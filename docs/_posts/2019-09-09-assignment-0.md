@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Assignment 1"
+title: "Assignment 0"
 categories: assignments
 ---
 
