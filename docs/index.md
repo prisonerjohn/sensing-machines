@@ -36,7 +36,7 @@ You should be an active participant in the class.
 * Show up on time and pay attention.
 * Participate in discussions and ask questions.
 
-There will be 4 assignments for the first part of the semester.
+There will be 3 assignments for the first part of the semester.
 * Assignments should be completed individually.
 * The objective of these is to make sure you understand what is covered in the class and get your hands dirty.
 * If you are familiar with the techniques explored, get out of your comfort zone!
@@ -61,14 +61,14 @@ I will notify you ahead of time if you are at risk of failing, and you can reach
 
 | Date                 | Topic          | Assignment |
 |:---------------------|:------------------|:------|:------|
-| Sep 9                | [Foreword]({{ site.baseurl }}{% post_url 2019-09-09-foreword %})<br/>[Images and Video]({{ site.baseurl }}{% post_url 2019-09-09-images-and-video %})<br/>[Intro to openFrameworks]({{ site.baseurl }}{% post_url 2019-09-09-intro-to-of %}) | Assignment 1 OUT |
-| Sep 16               | Computer Vision<br/>OpenCV | Assignment 1 DUE<br/>Assignment 2 OUT |
+| Sep 9                | [Foreword]({{ site.baseurl }}{% post_url 2019-09-09-foreword %})<br/>[Images and Video]({{ site.baseurl }}{% post_url 2019-09-09-images-and-video %})<br/>[Intro to openFrameworks]({{ site.baseurl }}{% post_url 2019-09-09-intro-to-of %}) | |
+| Sep 16               | [Images and Video]({{ site.baseurl }}{% post_url 2019-09-09-images-and-video %}) (Take 2)<br/>[Computer Vision]({{ site.baseurl }}{% post_url 2019-09-16-computer-vision %})<br/>[OpenCV]({{ site.baseurl }}{% post_url 2019-09-16-opencv %}) | Assignment 1 OUT |
 | Sep 23               | Image Filtering | |
-| Sep 30               | Depth Sensing | Assignment 2 DUE<br/>Assignment 3 OUT |
+| Sep 30               | Depth Sensing | Assignment 1 DUE<br/>Assignment 2 OUT |
 | Oct 7                | Audio and Sound | |
-| Oct 15 (**Tuesday**) | Communication | Assignment 3 DUE<br/>Assignment 4 OUT |
+| Oct 15 (**Tuesday**) | Communication | Assignment 2 DUE<br/>Assignment 3 OUT |
 | Oct 21               | Positional Tracking | |
-| Oct 28               | Topic TBD | Assignment 4 DUE |
+| Oct 28               | Topic TBD | Assignment 3 DUE |
 | Nov 4                | Project Proposals | Project Proposal DUE |
 | Nov 11               | Topic TBD<br/>Milestone Check-In | |
 | Nov 18               | Topic TBD<br/>Milestone Check-In | |

@@ -6,29 +6,76 @@ categories: notes
 
 Computer vision allows computers to "see", and to understand what they are seeing. This is done by reading and interpreting digital images and video.
 
-<details>
-    <summary>What are some examples of computer vision you can think of?</summary>
-    <p class="border">
-        <ul>
-            <li>Image filtering.</li>
-            <li>Background subtraction.</li>
-            <li>Object recognition (contour detection, blob detection).</li>
-            <li>Object tracking.</li>
-            <li>Face detection (feature recognition, smile detection, etc.)</li>
-            <li>Motion estimation (optical flow, motion vectors, etc.)</li>
-            <li>Camera and projector calibration.</li>
-        </ul>
-    </p>
-</details>
+What are some common computer vision operations?
+
+* Image filtering
+  * Convert from one color space to another (e.g. RGB to grayscale).
+  * Adjust brightness and contrast.
+  * Blur or sharpen the image.
+  * Edge detection.
+
+    <div style="width:600px;margin:0 auto;" markdown="1">
+    [![Understanding Edge Detection (Sobel Operator)](https://miro.medium.com/fit/c/1838/551/1*4lPMjSPaS2JLWZAaYrXr2Q.jpeg)
+    *Understanding Edge Detection (Sobel Operator)*](https://medium.com/datadriveninvestor/understanding-edge-detection-sobel-operator-2aada303b900)
+    </div>
+
+* Background subtraction
+  * Detect moving objects by comparing them to a reference frame.
+
+    <div style="width:600px;margin:0 auto;" markdown="1">
+    [![IHDC: Idiap Human Detection Code](https://www.idiap.ch/~odobez/human-detection/media/background-subtraction-1.png)
+    *IHDC: Idiap Human Detection Code*](https://www.idiap.ch/~odobez/human-detection/index.html)
+    </div>
+
+* Object recognition
+  * Blob detection
+  * Contour finding
+
+    <div style="width:600px;margin:0 auto;" markdown="1">
+    [![OpenCV Contours & Convex Hull 2 Structure plugin](http://kineme.net/files/composition/benoitlahoz/CarasueloContours.jpg)
+    *OpenCV Contours & Convex Hull 2 Structure plugin*](http://kineme.net/taxonomy/term/114/0)
+    </div>
+
+* Motion estimation
+  * Track pixel movement between consecutive frames and infer the direction objects are moving into.
+
+    <div style="width:600px;margin:0 auto;" markdown="1">
+    [![Dense Realtime Optical Flow on the GPU](http://cs.brown.edu/courses/csci1290/2011/results/final/psastras/images/sequence0/save_0.png)
+    *Dense Realtime Optical Flow on the GPU*](https://cs.brown.edu/courses/csci1290/2011/results/final/psastras/)
+    </div>
+  
+* Face detection
+  * Feature recognition
+  * Smile detection
+
+    <div style="width:600px;margin:0 auto;" markdown="1">
+    [![Object Detection : Face Detection using Haar Cascade Classifiers](https://www.bogotobogo.com/python/OpenCV_Python/images/FaceDetection/xfiles4.png){:width="100%" text-align:"center"}
+    *Object Detection : Face Detection using Haar Cascade Classifiers*](https://www.bogotobogo.com/python/OpenCV_Python/python_opencv3_Image_Object_Detection_Face_Detection_Haar_Cascade_Classifiers.php)
+    </div>
+
+* Camera and projector calibration
+
+    <div style="width:600px;margin:0 auto;" markdown="1">
+    [![Procamcalib](http://projection-mapping.org/wp-content/uploads/2015/02/procamcalib-thumb.png){:width="100%" text-align:"center"}
+    *Procamcalib*](http://projection-mapping.org/tools/procamcalib/)
+    </div>
+
+    <div style="width:600px;height:400px;margin:0 auto;" markdown="1">
+    <iframe width="600" height="375" src="https://www.youtube.com/embed/lX6JcybgDFo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    *Box by Bot & Dolly.*
+    </div>
 
 ### Image Segmentation
 
 One of the most common operations we will have to perform when working with computer vision is image segmentation. Image segmentation simply means dividing up the image pixels into meaningful groups. These meaningful groups depend on the application we are creating. For example, we may want to only consider the brightest pixels in an image, pixels of a certain color, clusters of pixels of a specific size, etc.
 
-Image segmentation is the first step into many applications as it is a way to discard unwanted data and only keep what we need to focus on.
+<div style="width:600px;margin:0 auto;" markdown="1">
+[![Shape-based hand recognition approach using the morphological pattern spectrum](https://www.researchgate.net/profile/Gabriel_Sanchez-Perez/publication/220050099/figure/fig1/AS:277473016205312@1443166130542/Hand-shape-segmentation-grayscale-captured-image-and-its-corresponding-binary-segmented.png){:width="100%" text-align:"center"}
+*Shape-based hand recognition approach using the morphological pattern spectrum*](https://www.researchgate.net/publication/220050099_Shape-based_hand_recognition_approach_using_the_morphological_pattern_spectrum)
+</div>
 
-<div style="padding:56.25% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/8525186" style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
-*<a href="https://vimeo.com/8525186">night lights</a> from <a href="https://vimeo.com/thesystemis">zach lieberman</a> on <a href="https://vimeo.com">Vimeo</a>.*
+
+Image segmentation is the first step into many applications as it is a way to discard unwanted data and only keep what we need to focus on.
 
 ### Video Capture
 
@@ -80,15 +127,64 @@ A better approach is to pass the original pixels by reference using the `&` oper
 
 Thresholding is a simple segmentation technique where a pixel value is either on or off. If it is on we will color it white and if it is off we will color it black. Thresholded images can be used as masks into our input image, used to discard any pixels we want to ignore.
 
+<div style="width:600px;height:400px;margin:0 auto;" markdown="1">
+<div style="padding:56.25% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/8525186" style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
+*<a href="https://vimeo.com/8525186">night lights</a> from <a href="https://vimeo.com/thesystemis">zach lieberman</a> on <a href="https://vimeo.com">Vimeo</a>.*
+</div>
+
 Let's write a simple thresholding algorithm that only keeps the brightest parts of an image. We will use the brightness of each pixel color to determine if it should be on or off in our result image.
 
 {% gist 249987b76ba66d33b5ecf1f2d9d904ad ofApp-threshold.cpp %}
 
-We should make our threshold value editable, as we do not know what environment this app will run in. We will achieve this using `ofParameter` and the `ofxGui` addon. 
-* [`ofParameter`](https://openframeworks.cc/documentation/types/ofParameter/) is a wrapper around a data object that gives it special abilities, like sending a notification whenever its value is changed. This makes is especially useful for GUIs where we need to act whenever a value is changed by clicking a button, moving a slider, etc. `ofParameter` objects use the template syntax, meaning that whatever type they hold is set between the `<>` symbols. In our case, since the threshold is an `int`, our `ofParameter` will be defined using `ofParameter<int>`.
-* `ofxGui` is an addon that ships with OF for creating GUI elements. Because this is an addon, we will need to select it when generating our project, so that OF knows where to find the additional files for it. While we can use `ofxGui` without `ofParameter`, they complement each other well and result in simpler code to read.
+We should make our threshold value editable, as we do not know what environment this app will run in. 
+
+Let's make `brightnessThreshold` a class variable by moving its declaration to the header file. We can then use the mouse position to adjust the value in every update loop. We will use the [`ofMap()`](https://openframeworks.cc/documentation/math/ofMath/#!show_ofMap) function to easily convert our mouse position (from 0 to the width of the window) to our brightness range (from `0` to `255`).
+
+{% gist 249987b76ba66d33b5ecf1f2d9d904ad ofApp-threshMouse.h %}
+{% gist 249987b76ba66d33b5ecf1f2d9d904ad ofApp-threshMouse.cpp %}
+
+While this works, it is a little clunky. We want better control and feedback for our threshold value, so let's use a slider instead of the mouse to set the value.
+
+We will achieve this using two new elements: the `ofxGui` addon and the `ofParameter` template class.
+
+### ofxGui
+
+The `ofxGui` addon ships with OF and is used for creating GUI elements. 
+
+"Addon" means it is not part of the OF core files. We need additional files in our project to use it. This can be done by selecting it in the Project Generator.
 
 ![]({{ site.baseurl }}/assets/images/of-pg-gui.png){:width="360px"}
+
+When we regenerate our project files, we will now have access to all the `ofxGui` classes. 
+
+For this example, we will use [`ofxPanel`](https://openframeworks.cc/documentation/ofxGui/ofxPanel/), which is simply a container that can hold other GUI controls like buttons and sliders.
+
+### ofParameter
+
+[`ofParameter`](https://openframeworks.cc/documentation/types/ofParameter/) is a wrapper around a data object that gives it super powers. For example:
+* Min and max values can be defined and the value will always stay within that range.
+* A notification gets triggered whenever its value is changed. This is especially useful for GUIs where we need to respond right away when a variable changes.
+
+`ofParameter` uses the template syntax, meaning that whatever type they hold is set between the `<>` symbols. In our case, since the threshold is an `int`, our `ofParameter` will be defined using `ofParameter<int>`.
+
+<details>
+	<summary>What is a template?</summary>
+	<p markdown="1">
+	C++ has a concept of [templates](https://en.cppreference.com/w/cpp/language/templates). The idea with templates is to pass types as parameters, similar to how we are used to pass values as parameters. This makes it so that we don't have to write the same code over and over for different data types.
+	</p>
+	<p markdown="1">
+	You will usually see classes or functions be templated.
+    </p>
+   	<p markdown="1">
+    In fact, we have already been using templates with `ofPixels`! The `ofPixels` type is actually a [shorthand](https://github.com/openframeworks/openFrameworks/blob/master/libs/openFrameworks/graphics/ofPixels.h#L661) for `ofPixels_<unsigned char>`. This means it is an [`ofPixels_`](https://openframeworks.cc/documentation/graphics/ofPixels/#!show_ofPixels_) template where the data type of the pixels is `unsigned char` (and that is why our values go from `0` to `255`).
+    </p>
+   	<p markdown="1">
+    `ofPixels_` can also be used with `float` and `unsigned short` pixels, using `ofPixels_<float>` or `ofPixels_<unsigned short>`. The shorthands `ofFloatPixels` and `ofShortPixels` are also available, and they represent exactly the same thing.
+	</p>
+	<p markdown="1">
+	Our `ofParameter` works in a similar way, it is a template class. We need to specify the type and precision of the data it will control, in this case `int`. This is done when declaring the variable with type `ofParameter<int>`.
+	</p>
+</details>
 
 Our code now looks like the following, and our app window has a slider in the top-left corner we can use to edit the threshold value.
 
@@ -101,7 +197,7 @@ Background subtraction is a segmentation technique where the background pixels o
 
 <details>
     <summary>What defines the background?</summary>
-    <p>This can greatly vary depending on the type of sensor used, the environment, and the application. When using a depth sensor, we can actually use a pixel's distance from the camera to determine if it's in the background or not. In general for 2D video, a background pixel is one that is considered stable, i.e. that does not change it's value much or at all.</p>
+    <p>This varies depending on the type of sensor used, the environment, and the application. When using a depth sensor, we can actually use a pixel's distance from the camera to determine if it's in the background or not. In general for 2D video, a background pixel is one that is considered stable, i.e. that does not change its value much or at all.</p>
 </details>
 
 Background subtraction requires that we have a background frame as a reference. We can do this by saving a video frame in memory, and comparing future frames to it in our update loop.
@@ -110,25 +206,6 @@ Video pixel values change slightly over time, so we cannot expect them to be ide
 
 {% gist 249987b76ba66d33b5ecf1f2d9d904ad ofApp-bgRgb.h %}
 {% gist 249987b76ba66d33b5ecf1f2d9d904ad ofApp-bgRgb.cpp %}
-
-### Color Space
-
-We often get better results when comparing colors in HSV rather than RGB space. 
-* RGB defines how much red, green, and blue is in an image. 
-  * A small change in values might result in a greater difference seen, and vice-versa. 
-  * When working in the grayscale range (white to black), it is hard to evaluate how much red, green, and blue is actually in the pixel.
-* HSV defines colors as levels of hue, saturation, and brightness. 
-  * This is closer to how humans perceive color, and differentiate objects they see in space.
-  * It is easier to isolate parameters. We will often just care about the brightness of an image, particularly in the grayscale range.
-  * It is a more logical set of parameters for many image analysis algorithms.
-
-<video src="{{ site.baseurl }}/assets/videos/ofxcv-lights.mov" controls width="360px"></video>
-<p markdown="1" class="caption">*[ofxCv](https://github.com/kylemcdonald/ofxCv) demo lights video*</p>
-
-We will modify our app to use HSV, and allow tuning each parameter's threshold separately.
-
-{% gist 249987b76ba66d33b5ecf1f2d9d904ad ofApp-bgHsv.h %}
-{% gist 249987b76ba66d33b5ecf1f2d9d904ad ofApp-bgHsv.cpp %}
 
 ### Devices
 
@@ -144,8 +221,10 @@ Depending on the application and environment, it might be better to use an alter
 
 Infrared cameras are often used for sensing because they sense light that is invisible to humans. They tend to be a more versatile choice as they can be used in a bright room, a pitch dark room, facing a video projector, behind a touch surface, etc.
 
+<div style="width:600px;height:490px;margin:0 auto;" markdown="1">
 <div style="padding:75% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/283105" style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
 *<a href="https://vimeo.com/283105">presence [a.k.a soft &amp; silky]</a> from <a href="https://vimeo.com/smallfly">smallfly</a> on <a href="https://vimeo.com">Vimeo</a>.*
+</div>
 
 Infrared USB cameras can be hard to come by. 
 * One option is to get a depth sensor like an [Intel RealSense](https://www.intelrealsense.com/). Most of these also include an IR light emitter, which means it will always have enough light to work properly.
@@ -154,4 +233,6 @@ Infrared USB cameras can be hard to come by.
 
 Thermographic cameras, commonly known as FLIR, can be an interesting option. These infrared cameras sense radiation/heat and represent it as a color map. This can be very useful for tracking humans or animals as they can easily be segmented from their surroundings.
 
-[![FLIR Scout TK](https://cdn.vox-cdn.com/thumbor/exFqfuIsk_Lq64eP97pyHTrPON0=/800x0/filters:no_upscale()/cdn.vox-cdn.com/uploads/chorus_asset/file/5882635/TK_Dog.0.JPG){:width="360px" text-align:"center"}](https://www.theverge.com/2016/1/6/10727126/flir-scout-tk-hands-on-video-ces-2016)
+<div style="width:600px;height:400px;margin:0 auto;" markdown="1">
+[![FLIR Scout TK](https://cdn.vox-cdn.com/thumbor/exFqfuIsk_Lq64eP97pyHTrPON0=/800x0/filters:no_upscale()/cdn.vox-cdn.com/uploads/chorus_asset/file/5882635/TK_Dog.0.JPG){:width="100%" text-align:"center"}](https://www.theverge.com/2016/1/6/10727126/flir-scout-tk-hands-on-video-ces-2016)
+</div>
