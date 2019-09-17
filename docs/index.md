@@ -12,7 +12,7 @@ Room 408
 Professor: Elie Zananiri<br/>
 Contact Email: [ez377@nyu.edu](mailto:ez377@nyu.edu)<br/>
 Office Hours: [Mondays 5:30pm-6:30pm by appointment](https://calendar.google.com/calendar/selfsched?sstoken=UUFtdUlOM1BOTFpsfGRlZmF1bHR8OTA2NTRjNjM2OTA5YjU0MTRhMjdjYjczYzc0ZTAwMTM)<br/>
-Telegram Channel: [https://t.me/joinchat/AAAAAFIipxpgf9iMHZEbaQ](https://t.me/joinchat/AAAAAFIipxpgf9iMHZEbaQ)
+Telegram Group: [https://t.me/sensingmachines](https://t.me/sensingmachines)
 
 # Overview
 
@@ -62,7 +62,7 @@ I will notify you ahead of time if you are at risk of failing, and you can reach
 | Date                 | Topic          | Assignment |
 |:---------------------|:------------------|:------|:------|
 | Sep 9                | [Foreword]({{ site.baseurl }}{% post_url 2019-09-09-foreword %})<br/>[Images and Video]({{ site.baseurl }}{% post_url 2019-09-09-images-and-video %})<br/>[Intro to openFrameworks]({{ site.baseurl }}{% post_url 2019-09-09-intro-to-of %}) | |
-| Sep 16               | [Images and Video]({{ site.baseurl }}{% post_url 2019-09-09-images-and-video %}) (Take 2)<br/>[Computer Vision]({{ site.baseurl }}{% post_url 2019-09-16-computer-vision %})<br/>[OpenCV]({{ site.baseurl }}{% post_url 2019-09-16-opencv %}) | Assignment 1 OUT |
+| Sep 16               | [Images and Video]({{ site.baseurl }}{% post_url 2019-09-09-images-and-video %}) (Take 2)<br/>[Computer Vision]({{ site.baseurl }}{% post_url 2019-09-16-computer-vision %})<br/>[OpenCV]({{ site.baseurl }}{% post_url 2019-09-16-opencv %}) | [Assignment 1 OUT]({{ site.baseurl }}{% post_url 2019-09-16-assignment-1 %}) |
 | Sep 23               | Image Filtering | |
 | Sep 30               | Depth Sensing | Assignment 1 DUE<br/>Assignment 2 OUT |
 | Oct 7                | Audio and Sound | |
