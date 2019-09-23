@@ -62,13 +62,13 @@ I will notify you ahead of time if you are at risk of failing, and you can reach
 | Date                 | Topic          | Assignment |
 |:---------------------|:------------------|:------|:------|
 | Sep 9                | [Foreword]({{ site.baseurl }}{% post_url 2019-09-09-foreword %})<br/>[Images and Video]({{ site.baseurl }}{% post_url 2019-09-09-images-and-video %})<br/>[Intro to openFrameworks]({{ site.baseurl }}{% post_url 2019-09-09-intro-to-of %}) | |
-| Sep 16               | [Images and Video]({{ site.baseurl }}{% post_url 2019-09-09-images-and-video %}) (Take 2)<br/>[Computer Vision]({{ site.baseurl }}{% post_url 2019-09-16-computer-vision %})<br/>[OpenCV]({{ site.baseurl }}{% post_url 2019-09-16-opencv %}) | [Assignment 1 OUT]({{ site.baseurl }}{% post_url 2019-09-16-assignment-1 %}) |
 | Sep 23               | Image Filtering | |
 | Sep 30               | Depth Sensing | Assignment 1 DUE<br/>Assignment 2 OUT |
 | Oct 7                | Audio and Sound | |
 | Oct 15 (**Tuesday**) | Communication | Assignment 2 DUE<br/>Assignment 3 OUT |
 | Oct 21               | Positional Tracking | |
 | Oct 28               | Topic TBD | Assignment 3 DUE |
+| Sep 16               | [Images and Video]({{ site.baseurl }}{% post_url 2019-09-09-images-and-video %}) (Take 2)<br/>[Computer Vision]({{ site.baseurl }}{% post_url 2019-09-16-computer-vision %})<br/>[Intro to OpenCV]({{ site.baseurl }}{% post_url 2019-09-16-intro-to-opencv %}) | [Assignment 1 OUT]({{ site.baseurl }}{% post_url 2019-09-16-assignment-1 %}) |
 | Nov 4                | Project Proposals | Project Proposal DUE |
 | Nov 11               | Topic TBD<br/>Milestone Check-In | |
 | Nov 18               | Topic TBD<br/>Milestone Check-In | |

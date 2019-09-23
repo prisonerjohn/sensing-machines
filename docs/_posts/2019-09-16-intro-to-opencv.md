@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "OpenCV"
+title: "Intro to OpenCV"
 categories: notes
 ---
 
@@ -67,57 +67,6 @@ We will also make two additional optimizations:
 
 {% gist 95ad94acc37baf167c4f2f15129f737b ofApp-bgCv.h %}
 {% gist 95ad94acc37baf167c4f2f15129f737b ofApp-bgCv.cpp %}
-
-### Contour Finding
-
-Contour finding consists of identifying regions of images matching a particular pattern. These patterns can be defined by color, size, shape, speed, etc. Contour finding can be used to follow objects or people in an image.
-
-This will usually consist of many steps:
-1. Convert the pixel data to an appropriate color space.
-1. Threshold the image based on a target color and offset. As we saw previously, video pixel colors vary over frames, so we need to use an offset to look for a color range.
-1. Run the OpenCV contour finding operation on the image.
-1. Filter the array of contours and only keep the ones that match the requested parameters.
-
-This is where `ofxCv` comes in very handy, as we can use the `ofxCv::ContourFinder` class to run all of this for us.
-
-The following example looks for contours that match a color and size range. Note the use of `ofParameter` for each of our configurable settings.
-
-{% gist 95ad94acc37baf167c4f2f15129f737b ofApp-findContours.h %}
-{% gist 95ad94acc37baf167c4f2f15129f737b ofApp-findContours.cpp %}
-
-While this application technically works, it is hard to get the settings right. Let's modify it to make it easier to use.
-
-### Color Space
-
-We often get better results when comparing colors in HSV rather than RGB space. 
-* RGB defines how much red, green, and blue is in an image. 
-  * A small change in values might result in a greater difference seen, and vice-versa. 
-  * When working near the grayscale range (white to black), it is hard to evaluate how much red, green, and blue is actually in the pixel.
-* HSV defines colors as levels of hue, saturation, and brightness. 
-  * This is closer to how humans perceive color, and differentiate objects they see in space.
-  * It is easier to isolate parameters. We will often just care about the brightness of an image, particularly in the grayscale range.
-  * It is a more logical set of parameters for many image analysis algorithms.
-
-<div style="width:600px;margin:0 auto;" markdown="1">
-<video src="{{ site.baseurl }}/assets/videos/ofxcv-lights.mov" controls width="100%"></video>
-<p markdown="1">*[ofxCv](https://github.com/kylemcdonald/ofxCv) demo lights video*</p>
-</div>
-
-We can tell `ofxCv::ContourFinder` to use HSV by passing a second parameter to the `setTargetColor()` method:
-
-```cpp
-contourFinder.setTargetColor(colorTarget, ofxCv::TRACK_COLOR_HSV);
-```
-
-Let's use the mouse to interactively select the color under the cursor.
-
-{% gist 95ad94acc37baf167c4f2f15129f737b ofApp-contoursMouse.h %}
-{% gist 95ad94acc37baf167c4f2f15129f737b ofApp-contoursMouse.cpp %}
-
-It's also hard to figure out what values to use for the min and max areas. We can switch to *normalized* values, meaning between `0.0` and `1.0` where `0.0` is nothing at all and `1.0` is the entire image region. We will have to switch our variables to `ofParameter<float>` and use the `setMin/MaxAreaNorm()` methods.
-
-{% gist 95ad94acc37baf167c4f2f15129f737b ofApp-contoursNorm.h %}
-{% gist 95ad94acc37baf167c4f2f15129f737b ofApp-contoursNorm.cpp %}
 
 ### Face Detection
 
