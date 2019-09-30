@@ -24,6 +24,10 @@ It is important to note the difference between full 3D and depth. Just like a re
 
 There are a few different technologies used for depth sensing, each with their own pros and cons depending on the application.
 
+Most depth cameras include both color and depth sensors, providiing a pair of images per frame. These are then combined to form a colored point cloud as the result.
+
+ADD IMAGE HERE!
+
 #### Coded (Structured) Light
 
 [Coded (or structured) light](https://en.wikipedia.org/wiki/Structured-light_3D_scanner) works by projecting a known pattern onto the world, then analyzing the deformations of the pattern to determine the shapes of the surfaces it is projected on.
@@ -68,38 +72,155 @@ Stereo vision works like human depth perception, where two cameras (or eyes) are
 * Pros:
     * Tends to be cheap, as any off the shelf cameras can be used.
     * Image representation is intuitive to humans.
+    * No interference.
 * Cons:
     * Low accuracy.
     * Complex implementation requiring feature extraction and matching.
 
-### Devices
+### Microsoft Kinect
 
-Kinect
-* Kinect
-* Kinect V2
-* Azure Kinect
+Microsoft was the first company to bring depth sensors to the mass market with the Kinect for Xbox 360 in 2010. This was originally designed as a game controller, but gained a lot of interest from robotics engineers and creative coders, who [hacked the device](https://www.wired.com/2011/06/mf_kinect/) to use for custom Desktop applications.
 
-Orbbec Astra
+Microsoft originally was against the practice, even threatening legal action against the hackers, but eventually changed course and embraced the community building around it.
 
-Intel RealSense 
-* Historical 200 series
-* 400 series
+<div style="width:600px;margin:0 auto;" markdown="1">
+<div style="padding:62.5% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/16818988" style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
+*<a href="https://vimeo.com/16818988">ofxKinect 3D draw 001</a> from <a href="https://vimeo.com/memotv">Memo Akten</a> on <a href="https://vimeo.com">Vimeo</a>.*
+</div>
 
-ZED
+<div style="width:600px;margin:0 auto;" markdown="1">
+<div style="padding:56.25% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/16985224" style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
+*<a href="https://vimeo.com/16985224">Interactive Puppet Prototype with Xbox Kinect</a> from <a href="https://vimeo.com/muonics">Theo Watson</a> on <a href="https://vimeo.com">Vimeo</a>.*
+</div>
 
-LeapMotion
+#### Kinect for Xbox 360
 
-For each:
-* Technology
-* IR or Color
-* Resolution
-* Range
-* Platforms (Mac, Win, Linux?)
+Even though it was discontinued in 2013, this device is still used because of its long range and ease of use on all major OSes.
 
-### Background subtraction example
+![]({{ site.baseurl }}/assets/images/kinect_v1.png){:width="600px"}
 
-### Mapping example
+* Technology: Coded light
+* Range: `1.2-3.5m` / `3.9-11.5ft`
+* Color resolution: `640x480px`
+* Depth resolution: `640x480px`
+* FOV: `57°x43°`
 
-* Packing data into images
-* Start thinking of Point Clouds and 3D points
+Extra features:
+  * Microphone
+  * Motorized base to adjust device angle
+
+OF Support
+* [ofxKinect](https://openframeworks.cc/documentation/ofxKinect/)
+  * Windows, Mac, Linux
+  * [README](https://github.com/openframeworks/openFrameworks/tree/master/addons/ofxKinect) for setup instructions
+  * Based on [libfreenect](https://openkinect.org/wiki/Main_Page)
+
+<div style="width:600px;margin:0 auto;" markdown="1">
+<div style="padding:56.25% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/36892768?color=ffffff&badge=0" style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
+*<a href="https://vimeo.com/36892768">Starfield</a> from <a href="https://vimeo.com/lab212">Lab212</a> on <a href="https://vimeo.com">Vimeo</a>.*
+</div>
+
+#### Kinect V2 (aka Kinect for Xbox One)
+
+Released in 2012, the second version of the Kinect is said to have 3x the fidelity of its predecessor and a 60% wider field of view. 
+
+While still originally labeled as an Xbox controller, Microsoft shipped a Windows SDK with the device, providing access to advanced features to Desktop applications.
+
+This device was discontinued in 2017 but is also still widely used for long-term installations.
+
+![]({{ site.baseurl }}/assets/images/kinect_v2.jpg){:width="600px"}
+
+* Technology: Time-of-flight
+* Range: `0.5-4.5m` / `1.6-11.5ft`
+* Color resolution: `1920x1080px`
+* Depth resolution: `512x424px`
+* FOV: `70°x60°`
+
+Extra features using [Microsoft SDK](https://developer.microsoft.com/en-us/windows/kinect):
+  * Body tracking (up to 6 people)
+  * Facial expression recognition
+  * Hand gesture recognition
+  * Heart rate tracking
+  * Speech recognition
+
+OF Support
+* [ofxKinectV2](https://github.com/ofTheo/ofxKinectV2)
+  * Windows, Mac, Linux
+  * Based on [libfreenect2](https://github.com/OpenKinect/libfreenect2)
+  * Note that this does not support any Microsoft SDK features like Body Tracking
+* [ofxKinectForWindows2](https://github.com/elliotwoods/ofxKinectForWindows2)
+  * Windows only!
+  * Requires [Microsoft SDK](https://developer.microsoft.com/en-us/windows/kinect)
+
+<div style="width:600px;margin:0 auto;" markdown="1">
+<div style="padding:56.25% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/96615251?title=0&byline=0&portrait=0" style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
+*<a href="https://vimeo.com/96615251">Parade - Dancing Shadow Sculptures</a> from <a href="https://vimeo.com/bonjourdpt">Dpt.</a> on <a href="https://vimeo.com">Vimeo</a>.*
+</div>
+
+#### Kinect for Azure
+
+Just released in 2019, the [Kinect for Azure](https://azure.microsoft.com/en-us/services/kinect-dk/) is based on technologies of the previous Kinect and the [HoloLens](https://www.microsoft.com/en-us/hololens). This is the first Kinect device marketed to developers at launch, and the first device to have an [open-source SDK](https://github.com/Microsoft/Azure-Kinect-Sensor-SDK) with official support for non-Windows platforms.
+
+Having just come out, the Kinect for Azure is still in development, but has a lot of promise.
+
+![]({{ site.baseurl }}/assets/images/kinect_v3.png){:width="600px"}
+
+* Technology: Time-of-flight
+* Range: `0.25-5.5m` / `0.8-11.5ft` (mode dependent)
+* Color resolution: Up to `3840x2160px`
+* Depth resolution: Up to `1024x1024px`
+* FOV: Up to `120°x120°`
+
+Extra features using [Microsoft SDK](https://developer.microsoft.com/en-us/windows/kinect):
+  * Orientation sensors
+  * 360° microphone array
+  * Body tracking (still in beta)
+
+OF Support
+* [ofxAzureKinect](https://github.com/prisonerjohn/ofxAzureKinect)
+  * Windows, Linux
+  * Requires [Azure Kinect Sensor SDK](https://docs.microsoft.com/en-us/azure/kinect-dk/sensor-sdk-download)
+
+### Intel RealSense
+
+The [Intel RealSense](https://www.intelrealsense.com/) started off as a compact depth camera aimed at video conferencing, gesture-based interaction, and 3D scanning. The 200 series included many devices, both standalone and embedded in tablet computers and laptops.
+
+The quality was not up-to-par with other depth cameras, and the original RealSense was rarely used for interactive installations.
+
+In 2018, Intel released the 400 series devices, which were a major improvement on the previous generation. Low cost, small form-factor and portability make these devices a viable choice for many applications.
+
+![]({{ site.baseurl }}/assets/images/realsense_d400_cameras.jpg){:width="600px"}
+
+#### D415 / D435 / D435i
+
+* Technology: Stereo IR
+* Range: `0.10-10m` / `0.3-32ft` (depends on conditions)
+* Color resolution: `1920x1080px`
+* Depth resolution: `1280x720px`
+* FOV: `65°x40°` (D415), `85°x58°` (D435)
+
+#### SR305
+
+* Technology: Coded light
+* Range: `0.20-1.5m` / `0.6-5ft` (depends on conditions)
+* Color resolution: `1920x1080px`
+* Depth resolution: `640x480px`
+* FOV: `69°x54°`
+
+Extra features:
+  * USB powered
+  * Orientation sensors (on D435i)
+
+OF Support
+* [ofxLibRealSense2](https://github.com/m9dfukc/ofxLibRealSense2)
+  * Mac (Windows, Linux in theory)
+* [ofxRealSense2](https://github.com/prisonerjohn/ofxRealSense2)
+  * Windows (Mac, Linux in theory)
+
+### Other Options
+
+* [Orbbec Astra](https://orbbec3d.com/product-astra-pro/)
+* [Structure Core](https://structure.io/structure-core)
+* [Stereolabs ZED](https://www.stereolabs.com/zed/)
+* [Leap Motion](https://www.leapmotion.com/)
 
