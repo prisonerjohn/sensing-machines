@@ -64,7 +64,7 @@ I will notify you ahead of time if you are at risk of failing, and you can reach
 | Sep 9                | [Foreword]({{ site.baseurl }}{% post_url 2019-09-09-foreword %})<br/>[Images and Video]({{ site.baseurl }}{% post_url 2019-09-09-images-and-video %})<br/>[Intro to openFrameworks]({{ site.baseurl }}{% post_url 2019-09-09-intro-to-of %}) | |
 | Sep 16               | [Images and Video]({{ site.baseurl }}{% post_url 2019-09-09-images-and-video %}) (Take 2)<br/>[Computer Vision]({{ site.baseurl }}{% post_url 2019-09-16-computer-vision %})<br/>[Intro to OpenCV]({{ site.baseurl }}{% post_url 2019-09-16-intro-to-opencv %}) | [Assignment 1 OUT]({{ site.baseurl }}{% post_url 2019-09-16-assignment-1 %}) |
 | Sep 23               | [Object Tracking]({{ site.baseurl }}{% post_url 2019-09-23-object-tracking %}) | |
-| Sep 30               | Depth Sensing I | Assignment 1 DUE<br/>Assignment 2 OUT |
+| Sep 30               | [Logging]({{ site.baseurl }}{% post_url 2019-09-30-logging %})<br/>[Depth Sensing I]({{ site.baseurl }}{% post_url 2019-09-30-depth-sensing %}) | Assignment 1 DUE<br/>[Assignment 2 OUT]({{ site.baseurl }}{% post_url 2019-09-30-assignment-2 %}) |
 | Oct 7                | Depth Sensing II | |
 | Oct 15 (**Tuesday**) | Audio and Sound | Assignment 2 DUE<br/>Assignment 3 OUT |
 | Oct 21               | Communication | |
