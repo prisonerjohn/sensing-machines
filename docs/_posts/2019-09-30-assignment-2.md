@@ -52,3 +52,5 @@ Due on **Oct 15 2019** at **6:30pm** (start of class).
 * Email your package ZIP to [ez377@nyu.edu](mailto:ez377@nyu.edu).
 
 * Come to class with a working project on a working computer, and be prepared to talk and answer questions about it. Time allowing, some of you will demo your projects to the class!
+
+* **OPTIONAL** In true ITP fashion, you can make a blog post about your project. If you do, please send me the link!

@@ -4,6 +4,10 @@ title: "Assignment 0"
 categories: assignments
 ---
 
+This is an optional, easier assignment that can be delivered instead of [Assignment 2]({{ site.baseurl }}{% post_url 2019-09-30-assignment-2 %}).
+
+This is an alternative for students who are having difficulties with C++ and openFrameworks, and want to make sure they have the basics right before diving in too deep. 
+
 ### Conway's Game of Life
 
 [Conway's Game of Life](https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life) is a cellular automata simulation where a 2D grid of cells evolve between alive and dead states.
@@ -43,26 +47,28 @@ for (each cell in image):
 
 ### Delivery
 
-* Name your project `SM01_{FirstLast}` where *First* is your first name and *Last* is your last name.
+* Name your project `SM00_{FirstLast}` where *First* is your first name and *Last* is your last name.
 
 ```
 - OF/
   - apps/
     - SensingMachines/
-      - SM01_ElieZananiri/
+      - SM00_ElieZananiri/
         - src/
         - bin/
-        - SM01_ElieZananiri.sln
-        - SM01_ElieZananiri.vcxproj
+        - SM00_ElieZananiri.sln
+        - SM00_ElieZananiri.vcxproj
         - ...
 ```
 
-* Only submit the source files, no project or compiled files. In the example above, you would only keep the `src` folder and package the `SM01_ElieZananiri` parent directory.
+* Only submit the source files, no project or compiled files. In the example above, you would only keep the `src` folder and package the `SM00_ElieZananiri` parent directory.
 
 ```
     - SensingMachines/
-      - SM01_ElieZananiri/
+      - SM00_ElieZananiri/
         - src/
 ```
 
 * Email your package ZIP to [ez377@nyu.edy](mailto:ez377@nyu.edu).
+
+* **OPTIONAL** In true ITP fashion, you can make a blog post about your project. If you do, please send me the link!
