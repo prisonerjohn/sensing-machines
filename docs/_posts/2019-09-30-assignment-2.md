@@ -14,7 +14,7 @@ Create an original application using openFrameworks and a depth sensing camera. 
 
 * You can use any of the computer vision (CV) algorithms and functions we have seen so far in this course. This is not required, but might be useful depending on what you are trying to do.
 
-* If you have an idea but are not sure how to do it, ask about it in the Telegram channel and we can break it down and figure it out together.
+* If you have an idea but are not sure how to do it, ask about it in the Telegram channel and we can break it down and figure it out together. 
 
 * Expose your parameters and use a GUI or some form of controller to tweak them for best results.
 
