@@ -102,7 +102,7 @@ Note the use of [`ofEnableDepthTest()`](https://openframeworks.cc/documentation/
 
 ![]({{ site.baseurl }}/assets/images/rs-pointsgray.png){:width="600px"}
 
-### Corresponde	nce
+### Correspondence
 
 At this point, you may be tempted to swap out the bind from the depth texture to the color texture, to get points in the correct color. But you'll notice the results don't quite match up.
 
@@ -110,13 +110,26 @@ At this point, you may be tempted to swap out the bind from the depth texture to
 
 The depth cameras we are using are actually made up of a couple of sensors: an infrared sensor to record depth and a color sensor to record... color. These are two different components, each with their own lens, resolution, and field of view. Because of this, pixels at the same coordinates will most likely not match. There needs to be some type of formula to convert from depth space to color space and vice-versa. Moreover, the world positions are also in their own space. Pixel coordinate `(120, 12)` doesn't mean anything in 3D, so there needs to be another formula to convert from depth space to world space, and from color space to world space.
 
-Luckily for us, depth cameras have all this already figured out and provide this information through their SDK. This can have many names, but it's usually called *registration*, *calibration*, or *correspondence*. There are a few options in how this is delivered.
+Luckily for us, depth cameras have all this already figured out and provide this information through their SDK. 
+
+This can have many names, but it's usually called *registration*, *alignment*, or *correspondence*. 
+
+There are a few options in how this is delivered.
+
 * Secondary textures where the pixels are transformed to make a 1-1 relationship. For example, `ofxKinect` has a [`setRegistration()`](https://openframeworks.cc/documentation/ofxKinect/ofxKinect/#!show_setRegistration) function which outputs the color data in the same space as the depth data.
 * Look-up tables (LUTs) (usually as textures) where you can calculate a pixel's world position based on the pixel value in the LUT. For example, [`ofxKinectForWindows2`](https://github.com/elliotwoods/ofxKinectForWindows2) uses an RGB float texture can be used to represent a vertex XYZ position.
 * A getter function to map a pixel coordinate to a world position. For example, [`ofxKinectV2`](https://github.com/ofTheo/ofxKinectV2) has a `getWorldCoordinateAt(x, y)` function that does exactly that.
 * A pre-mapped mesh that already has the depth and color mapped to world positions and provides the output data. For example, [`ofxRealSense2`](https://github.com/prisonerjohn/ofxRealSense2) has a `getPointsVbo()` function that can be drawn directly.
 
 You'll have to read the documentation or look at the examples for the depth camera you are using to determine how to get correspondence between depth, color, and world space.
+
+For our app, we can set the `ofxRealSense2::Device::alignMode` parameter to `Align::Color` to align the depth and color frames.
+
+{% gist c0a4c3b5858a4237aa870aa96bdc0f1f ofApp-aligned.cpp %}
+
+Note that this still doesn't place our points in world space but at least they are colored accurately. To do this, we can use the `ofxRealSense2::Device::getWorldPosition(x, y)` function.
+
+{% gist c0a4c3b5858a4237aa870aa96bdc0f1f ofApp-worldPos.cpp %}
 
 <div style="padding:56.25% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/89680830?color=ffffff&title=0&byline=0&portrait=0" style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
 <p><a href="https://vimeo.com/89680830">CLOUDS - Overview</a> from <a href="https://vimeo.com/deepspeed">Jonathan Minard</a> on <a href="https://vimeo.com">Vimeo</a>.</p>
