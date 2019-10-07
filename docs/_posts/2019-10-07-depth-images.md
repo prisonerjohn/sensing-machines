@@ -24,7 +24,7 @@ We fortunately will not have to implement this ourselves. In the same way that `
 
 #### Intel RealSense
 
-[`ofxRealSense2`](https://github.com/prisonerjohn/ofxRealSense2) is a good choice for the Intel RealSense, as it gives us both pixel and texture access, as well as control over many of the SDK's filtering options.
+[`ofxRealSense2`](https://github.com/prisonerjohn/ofxRealSense2) is a good choice for the Intel RealSense, as it gives us both pixel and texture access, as well as control over many of the SDK's filtering options. The repo download doesn't always include the lib files, so your best bet is to download it from the [Releases](https://github.com/prisonerjohn/ofxRealSense2/releases) page.
 
 {% gist 2b564edede9ff89de8bf495397a19a79 ofApp-basic.h %}
 {% gist 2b564edede9ff89de8bf495397a19a79 ofApp-basic.cpp %}
