@@ -57,6 +57,11 @@ We will therefore read our value from the raw depth texture.
 
 Note that we are getting an `ofColor` from the depth pixels, and then just reading the red channel with `ofColor.r` to get the actual value. We could use any of the red, green, blue channels here; as our data is in a single grayscale channel, all the colors represent the same value.
 
+The Intel RealSense raw image tends to be very noisy, and needs some filtering to clean it up and make it usable. The SDK includes many options for filtering and these are available in the addon. To use them with `ofxGui`, you just need to add the `ofxRealSense2::Device.params` object to the `ofxPanel`.
+
+{% gist 2b564edede9ff89de8bf495397a19a79 ofApp-gui.h %}
+{% gist 2b564edede9ff89de8bf495397a19a79 ofApp-gui.cpp %}
+
 #### Microsoft Kinect
 
 [`ofxKinect`](https://openframeworks.cc/documentation/ofxKinect/) is the best choice for the original Microsoft Kinect, as it ships with OF and gives us all the data we need.
