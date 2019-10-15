@@ -24,7 +24,7 @@ We fortunately will not have to implement this ourselves. In the same way that `
 
 #### Intel RealSense
 
-[`ofxRealSense2`](https://github.com/prisonerjohn/ofxRealSense2) is a good choice for the Intel RealSense, as it gives us both pixel and texture access, as well as control over many of the SDK's filtering options.
+[`ofxRealSense2`](https://github.com/prisonerjohn/ofxRealSense2) is a good choice for the Intel RealSense, as it gives us both pixel and texture access, as well as control over many of the SDK's filtering options. The repo download doesn't always include the lib files, so your best bet is to download it from the [Releases](https://github.com/prisonerjohn/ofxRealSense2/releases) page.
 
 {% gist 2b564edede9ff89de8bf495397a19a79 ofApp-basic.h %}
 {% gist 2b564edede9ff89de8bf495397a19a79 ofApp-basic.cpp %}
@@ -36,6 +36,8 @@ A depth image will usually be single-channel, and therefore rendered in grayscal
 Let's read the actual depth value using the SDK function `ofxRealSense2::Device.getDistance(x, y)`. We will read the value under the mouse, and display it using [`ofDrawBitmapStringHighlight()`](https://openframeworks.cc/documentation/graphics/ofGraphics/#!show_ofDrawBitmapString) for debugging.
 
 {% gist 2b564edede9ff89de8bf495397a19a79 ofApp-distance.cpp %}
+
+Note the use of [`ofClamp()`](https://openframeworks.cc/documentation/math/ofMath/#!show_ofClamp). This ensures our sampling coordinate is always within the bounds of the depth pixel array.
 
 This value probably comes from the depth texture. Let's try to read it directly from the pixels array and see if the values match. Note that there are usually two available depth readings:
 
@@ -53,13 +55,36 @@ We will therefore read our value from the raw depth texture.
 
 {% gist 2b564edede9ff89de8bf495397a19a79 ofApp-rawDepth.cpp %}
 
+Note that we are getting an `ofColor` from the depth pixels, and then just reading the red channel with `ofColor.r` to get the actual value. We could use any of the red, green, blue channels here; as our data is in a single grayscale channel, all the colors represent the same value.
+
+The Intel RealSense raw image tends to be very noisy, and needs some filtering to clean it up and make it usable. The SDK includes many options for filtering and these are available in the addon. To use them with `ofxGui`, you just need to add the `ofxRealSense2::Device.params` object to the `ofxPanel`.
+
+{% gist 2b564edede9ff89de8bf495397a19a79 ofApp-gui.h %}
+{% gist 2b564edede9ff89de8bf495397a19a79 ofApp-gui.cpp %}
+
 #### Microsoft Kinect
 
-[`ofxKinect`]() is the best choice for the original Microsoft Kinect, as it ships with OF and gives us all the data we need.
+[`ofxKinect`](https://openframeworks.cc/documentation/ofxKinect/) is the best choice for the original Microsoft Kinect, as it ships with OF and gives us all the data we need.
 
 Notice that the code looks almost similar to what we just did for the RealSense!
 
-{% gist 42cbc92be72fbf70b7b498d41e06e686 ofApp-rawDepth.cpp %}
+{% gist 42cbc92be72fbf70b7b498d41e06e686 ofApp-oneDepth.h %}
+{% gist 42cbc92be72fbf70b7b498d41e06e686 ofApp-oneDepth.cpp %}
+
+#### Microsoft Kinect V2
+
+[`ofxKinectForWindows2`](https://github.com/elliotwoods/ofxKinectForWindows2) is a good choice for the Kinect V2. It works with the [Microsoft Kinect for Windows 2.0 SDK], which means it supports all Kinect features (including body tracking), but only works on Windows.
+
+Note that `ofxKinectForwindows2` doesn't work out of the box with the Project Generator! You will need to make a modification to the project properties in Visual Studio as follows:
+
+![]({{ site.baseurl }}/assets/images/vs-kfw2.png){:width="600px"}
+
+Alternatively, [`ofxKinectV2`](https://github.com/ofTheo/ofxKinectV2) is a cross-platform solution that works similarly to `ofxKinect`.
+
+`ofxKinectForWindows2` does not include a function to get distance from a coordinate, so we will need to sample the depth texture directly.
+
+{% gist 42cbc92be72fbf70b7b498d41e06e686 ofApp-twoDepth.h %}
+{% gist 42cbc92be72fbf70b7b498d41e06e686 ofApp-twoDepth.cpp %}
 
 ### Depth Threshold
 
@@ -86,9 +111,4 @@ Here is a second thresholding attempt using OpenCV.
 {% gist 2b564edede9ff89de8bf495397a19a79 ofApp-cv.h %}
 {% gist 2b564edede9ff89de8bf495397a19a79 ofApp-cv.cpp %}
 
-
-
-
-
-
-
+And here is that same example using a Kinect and 
