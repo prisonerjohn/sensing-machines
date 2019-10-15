@@ -26,7 +26,7 @@ Due on **Oct 15 2019** at **6:30pm** (start of class).
 
 ### Delivery
 
-* Name your project `SM02_{FirstLast}` where *First* is your first name and *Last* is your last name.
+* Name your project `SM02_FirstLast` where *First* is your first name and *Last* is your last name.
 
 ```
 - OF/
@@ -35,22 +35,33 @@ Due on **Oct 15 2019** at **6:30pm** (start of class).
       - SM02_ElieZananiri/
         - src/
         - bin/
+        - addons.make
         - SM02_ElieZananiri.sln
         - SM02_ElieZananiri.vcxproj
         - ...
 ```
 
-* Only submit the source files, no project or compiled files. In the example above, you would only keep the `src` folder and `bin/data` if you are using any external assets. Package the `SM02_ElieZananiri` parent directory.
+* Only submit the necessary files to rebuild your project. 
+  * This includes sources, the `addons.make` file, and any resources in your `data` folder. 
+  * No project or compiled files. 
+  * In the example above, you would only keep the `src` folder, `addons.make` file, and `bin/data` if you are using any external assets. 
+  * Zip the `SM02_ElieZananiri` parent directory.
 
 ```
     - SensingMachines/
       - SM02_ElieZananiri/
         - src/
         - bin/data/
+        - addons.make
 ```
 
-* Email your package ZIP to [ez377@nyu.edu](mailto:ez377@nyu.edu).
+* **OPTIONAL** In true ITP fashion, you can make a blog post about your project. If you do, please send me the link!
+
+* Email your project to [ez377@nyu.edu](mailto:ez377@nyu.edu).
+  * Send the package ZIP as an attachment.
+  * If that does not work, upload it to Google Drive and send me the link.
+  * If you made a blog post or added your project to GitHub, send me a link to that too.
 
 * Come to class with a working project on a working computer, and be prepared to talk and answer questions about it. Time allowing, some of you will demo your projects to the class!
 
-* **OPTIONAL** In true ITP fashion, you can make a blog post about your project. If you do, please send me the link!
+Thank you!
