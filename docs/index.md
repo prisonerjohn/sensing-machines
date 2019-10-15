@@ -65,9 +65,9 @@ I will notify you ahead of time if you are at risk of failing, and you can reach
 | Sep 16               | [Images and Video]({{ site.baseurl }}{% post_url 2019-09-09-images-and-video %}) (Take 2)<br/>[Computer Vision]({{ site.baseurl }}{% post_url 2019-09-16-computer-vision %})<br/>[Intro to OpenCV]({{ site.baseurl }}{% post_url 2019-09-16-intro-to-opencv %}) | [Assignment 1 OUT]({{ site.baseurl }}{% post_url 2019-09-16-assignment-1 %}) |
 | Sep 23               | [Object Tracking]({{ site.baseurl }}{% post_url 2019-09-23-object-tracking %}) | |
 | Sep 30               | [Logging]({{ site.baseurl }}{% post_url 2019-09-30-logging %})<br/>[Depth Sensing]({{ site.baseurl }}{% post_url 2019-09-30-depth-sensing %}) | Assignment 1 DUE<br/>[Assignment 2 OUT]({{ site.baseurl }}{% post_url 2019-09-30-assignment-2 %}) |
-| Oct 7                | [Pointers]({{ site.baseurl }}{% post_url 2019-10-07-pointers %})<br/>[Depth Images]({{ site.baseurl }}{% post_url 2019-10-07-depth-images %})<br/>[Depth World]({{ site.baseurl }}{% post_url 2019-10-07-depth-world %}) | [Assignment 0 OUT]({{ site.baseurl }}{% post_url 2019-09-09-assignment-0 %}) |
-| Oct 15 (**Tuesday**) | Communication | Assignment 2 DUE<br/>Assignment 3 OUT |
-| Oct 21               | Audio and Sound | |
+| Oct 7                | [Pointers]({{ site.baseurl }}{% post_url 2019-10-07-pointers %})<br/>[Depth Images]({{ site.baseurl }}{% post_url 2019-10-07-depth-images %}) | [Assignment 0 OUT]({{ site.baseurl }}{% post_url 2019-09-09-assignment-0 %}) |
+| Oct 15 (**Tuesday**) | [Depth World]({{ site.baseurl }}{% post_url 2019-10-15-depth-world %})<br/>Communication | Assignment 3 OUT |
+| Oct 21               | Audio and Sound | Assignment 2 DUE |
 | Oct 28               | Positional Tracking | Assignment 3 DUE |
 | Nov 4                | Project Proposals | Project Proposal DUE |
 | Nov 11               | Topic TBD<br/>Milestone Check-In | |
