@@ -67,10 +67,10 @@ I will notify you ahead of time if you are at risk of failing, and you can reach
 | Sep 30               | [Logging]({{ site.baseurl }}{% post_url 2019-09-30-logging %})<br/>[Depth Sensing]({{ site.baseurl }}{% post_url 2019-09-30-depth-sensing %}) | Assignment 1 DUE<br/>[Assignment 2 OUT]({{ site.baseurl }}{% post_url 2019-09-30-assignment-2 %}) |
 | Oct 7                | [Pointers]({{ site.baseurl }}{% post_url 2019-10-07-pointers %})<br/>[Depth Images]({{ site.baseurl }}{% post_url 2019-10-07-depth-images %}) | [Assignment 0 OUT]({{ site.baseurl }}{% post_url 2019-09-09-assignment-0 %}) |
 | Oct 15 (**Tuesday**) | [Depth World]({{ site.baseurl }}{% post_url 2019-10-15-depth-world %})<br/>[Networking]({{ site.baseurl }}{% post_url 2019-10-15-networking %}) | [Assignment 3 OUT]({{ site.baseurl }}{% post_url 2019-10-15-assignment-3 %}) |
-| Oct 21               | Audio and Sound | Assignment 2 DUE |
-| Oct 28               | Positional Tracking | Assignment 3 DUE |
+| Oct 21               | [Texture Sharing]({{ site.baseurl }}{% post_url 2019-10-21-texture-sharing %}) | Assignment 2 DUE |
+| Oct 28               | Audio and Sound | Assignment 3 DUE |
 | Nov 4                | Project Proposals | Project Proposal DUE |
-| Nov 11               | Topic TBD<br/>Milestone Check-In | |
+| Nov 11               | Positional Tracking<br/>Milestone Check-In | |
 | Nov 18               | Topic TBD<br/>Milestone Check-In | |
 | Nov 25               | Final Presentations | Final Project DUE |
 
