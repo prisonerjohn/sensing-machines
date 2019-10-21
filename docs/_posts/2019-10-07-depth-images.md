@@ -111,4 +111,7 @@ Here is a second thresholding attempt using OpenCV.
 {% gist 2b564edede9ff89de8bf495397a19a79 ofApp-cv.h %}
 {% gist 2b564edede9ff89de8bf495397a19a79 ofApp-cv.cpp %}
 
-And here is that same example using a Kinect and 
+And here is that same example using a Kinect and OpenCV.
+
+{% gist 42cbc92be72fbf70b7b498d41e06e686 ofApp-threshold.h %}
+{% gist 42cbc92be72fbf70b7b498d41e06e686 ofApp-threshold.cpp %}
