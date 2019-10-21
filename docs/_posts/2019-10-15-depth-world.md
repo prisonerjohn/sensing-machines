@@ -151,6 +151,8 @@ There are a few options in how this is delivered.
 
 You'll have to read the documentation or look at the examples for the depth camera you are using to determine how to get correspondence between depth, color, and world space.
 
+#### Intel RealSense
+
 For our app, we can set the `ofxRealSense2::Device::alignMode` parameter to `Align::Color` to align the depth and color frames.
 
 {% gist c0a4c3b5858a4237aa870aa96bdc0f1f ofApp-aligned.cpp %}
@@ -158,6 +160,19 @@ For our app, we can set the `ofxRealSense2::Device::alignMode` parameter to `Ali
 Note that this still doesn't place our points in world space but at least they are colored accurately. To do this, we can use the `ofxRealSense2::Device::getWorldPosition(x, y)` function.
 
 {% gist c0a4c3b5858a4237aa870aa96bdc0f1f ofApp-worldPos.cpp %}
+
+#### Microsoft Kinect
+
+For `ofxKinect`, we just need to call `setRegistration()` to have the depth and color images correspond.
+
+Here is the extruded texture example.
+
+{% gist c0a4c3b5858a4237aa870aa96bdc0f1f ofApp-kinect.h %}
+{% gist c0a4c3b5858a4237aa870aa96bdc0f1f ofApp-kinectExtrude.cpp %}
+
+And here is the example adjusted for world positions, using [`ofxKinect.getWorldCooordinateAt()`](https://openframeworks.cc//documentation/ofxKinect/ofxKinect/#!show_getWorldCoordinateAt).
+
+{% gist c0a4c3b5858a4237aa870aa96bdc0f1f ofApp-kinectWorld.cpp %}
 
 <div style="padding:56.25% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/89680830?color=ffffff&title=0&byline=0&portrait=0" style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
 <p><a href="https://vimeo.com/89680830">CLOUDS - Overview</a> from <a href="https://vimeo.com/deepspeed">Jonathan Minard</a> on <a href="https://vimeo.com">Vimeo</a>.</p>
