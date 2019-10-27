@@ -68,8 +68,8 @@ I will notify you ahead of time if you are at risk of failing, and you can reach
 | Oct 7                | [Pointers]({{ site.baseurl }}{% post_url 2019-10-07-pointers %})<br/>[Depth Images]({{ site.baseurl }}{% post_url 2019-10-07-depth-images %}) | [Assignment 0 OUT]({{ site.baseurl }}{% post_url 2019-09-09-assignment-0 %}) |
 | Oct 15 (**Tuesday**) | [Depth World]({{ site.baseurl }}{% post_url 2019-10-15-depth-world %})<br/>[Networking]({{ site.baseurl }}{% post_url 2019-10-15-networking %}) | [Assignment 3 OUT]({{ site.baseurl }}{% post_url 2019-10-15-assignment-3 %}) |
 | Oct 21               | [Draw Bounds]({{ site.baseurl }}{% post_url 2019-10-21-draw-bounds %})<br/>[Texture Sharing]({{ site.baseurl }}{% post_url 2019-10-21-texture-sharing %}) | Assignment 2 DUE |
-| Oct 28               | Audio and Sound | Assignment 3 DUE |
-| Nov 4                | Project Proposals | Project Proposal DUE |
+| Oct 28               | [Sound]({{ site.baseurl }}{% post_url 2019-10-28-sound %}) | Assignment 3 DUE |
+| Oct 21               | Project Proposals | Project Proposal DUE |
 | Nov 11               | Positional Tracking<br/>Milestone Check-In | |
 | Nov 18               | Topic TBD<br/>Milestone Check-In | |
 | Nov 25               | Final Presentations | Final Project DUE |
