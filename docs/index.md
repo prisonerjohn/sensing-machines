@@ -60,7 +60,7 @@ I will notify you ahead of time if you are at risk of failing, and you can reach
 # Schedule
 
 | Date                 | Topic          | Assignment |
-|:---------------------|:------------------|:------|:------|
+|:---------------------|:---------------|:-----------|
 | Sep 9                | [Foreword]({{ site.baseurl }}{% post_url 2019-09-09-foreword %})<br/>[Images and Video]({{ site.baseurl }}{% post_url 2019-09-09-images-and-video %})<br/>[Intro to openFrameworks]({{ site.baseurl }}{% post_url 2019-09-09-intro-to-of %}) | |
 | Sep 16               | [Images and Video]({{ site.baseurl }}{% post_url 2019-09-09-images-and-video %}) (Take 2)<br/>[Computer Vision]({{ site.baseurl }}{% post_url 2019-09-16-computer-vision %})<br/>[Intro to OpenCV]({{ site.baseurl }}{% post_url 2019-09-16-intro-to-opencv %}) | [Assignment 1 OUT]({{ site.baseurl }}{% post_url 2019-09-16-assignment-1 %}) |
 | Sep 23               | [Object Tracking]({{ site.baseurl }}{% post_url 2019-09-23-object-tracking %}) | |
@@ -68,8 +68,8 @@ I will notify you ahead of time if you are at risk of failing, and you can reach
 | Oct 7                | [Pointers]({{ site.baseurl }}{% post_url 2019-10-07-pointers %})<br/>[Depth Images]({{ site.baseurl }}{% post_url 2019-10-07-depth-images %}) | [Assignment 0 OUT]({{ site.baseurl }}{% post_url 2019-09-09-assignment-0 %}) |
 | Oct 15 (**Tuesday**) | [Depth World]({{ site.baseurl }}{% post_url 2019-10-15-depth-world %})<br/>[Networking]({{ site.baseurl }}{% post_url 2019-10-15-networking %}) | [Assignment 3 OUT]({{ site.baseurl }}{% post_url 2019-10-15-assignment-3 %}) |
 | Oct 21               | [Draw Bounds]({{ site.baseurl }}{% post_url 2019-10-21-draw-bounds %})<br/>[Texture Sharing]({{ site.baseurl }}{% post_url 2019-10-21-texture-sharing %}) | Assignment 2 DUE |
-| Oct 28               | [Sound]({{ site.baseurl }}{% post_url 2019-10-28-sound %}) | Assignment 3 DUE |
-| Oct 21               | Project Proposals | Project Proposal DUE |
+| Oct 28               | [Sound]({{ site.baseurl }}{% post_url 2019-10-28-sound %}) | Assignment 3 DUE<br>[Final Project OUT]({{ site.baseurl }}{% post_url 2019-10-28-final-project %}) |
+| Nov 4                | Project Proposals | Project Proposal DUE |
 | Nov 11               | Positional Tracking<br/>Milestone Check-In | |
 | Nov 18               | Topic TBD<br/>Milestone Check-In | |
 | Nov 25               | Final Presentations | Final Project DUE |
