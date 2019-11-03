@@ -15,7 +15,7 @@ Create a fully fleshed out interactive. This can take many shapes:
 ### Instructions
 
 * Team up in groups of 2.
-  * You can be 3 in a team if it makes sense. Project complexity should be proportional to the size of your group.
+  * You can be 1 or 3 in a team if it makes sense. Project complexity should be proportional to the size of your group.
   * Clearly define everyone's roles.
   * If you have an idea and are looking for a partner, propose it in the Telegram channel!
 
