@@ -4,7 +4,7 @@ title: "Frame Buffers"
 categories: notes
 ---
 
-When we draw something in OF, whether it's a circle or an image or a 3D shape, it gets drawn to the screen by default. But we don't need to necessarily draw to the screen; we can draw to an offscreen location called a *framebuffer*. '
+When we draw something in OF, whether it's a circle or an image or a 3D shape, it gets drawn to the screen by default. But we don't need to necessarily draw to the screen; we can draw to an offscreen location called a *framebuffer*.
 
 A framebuffer object (or FBO) is a simple OpenGL object that lives in graphics memory that you can draw into. You can think of it as a "virtual window", anything you can draw on screen you can draw inside this window.
 
