@@ -70,8 +70,8 @@ I will notify you ahead of time if you are at risk of failing, and you can reach
 | Oct 21               | [Draw Bounds]({{ site.baseurl }}{% post_url 2019-10-21-draw-bounds %})<br/>[Texture Sharing]({{ site.baseurl }}{% post_url 2019-10-21-texture-sharing %}) | Assignment 2 DUE |
 | Oct 28               | [Sound]({{ site.baseurl }}{% post_url 2019-10-28-sound %}) | Assignment 3 DUE<br>[Final Project OUT]({{ site.baseurl }}{% post_url 2019-10-28-final-project %}) |
 | Nov 4                | Project Proposals<br/>[Frame Buffers]({{ site.baseurl }}{% post_url 2019-11-04-frame-buffers %}) | Project Proposal DUE |
-| Nov 11               | Positional Tracking<br/>Milestone Check-In | |
-| Nov 18               | Topic TBD<br/>Milestone Check-In | |
+| Nov 11               | Milestone Check-In<br/>[Classes]({{ site.baseurl }}{% post_url 2019-11-11-classes %})<br/>[Mobile Development]({{ site.baseurl }}{% post_url 2019-11-11-mobile-development %}) | |
+| Nov 18               | Milestone Check-In | |
 | Nov 25               | Final Presentations | Final Project DUE |
 
 # Academic Integrity
